@@ -1,6 +1,6 @@
 <!--
 title:   Pull Requestの作成を自動化したい
-tags:    shell, github, 自動化, gh
+tags:    shell,github,自動化,gh
 private: false
 -->
 # 背景
