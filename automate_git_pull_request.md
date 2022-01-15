@@ -1,6 +1,6 @@
 <!--
 title:   Pull Requestの作成を自動化したい
-tags:    GH,GitHub,shell,自動化
+tags:    GH,GitHub,pullrequest,shell,自動化
 id:      9846601839a0f48f027c
 private: false
 -->
@@ -22,7 +22,8 @@ githubのコマンドラインインターフェース:[gh](https://cli.github.c
 * 開発が終わってコミットまで済んでいる
 
 パラメータを対話型で入力する場合
-` bash
+
+```bash
 #!/bin/bash
 
 # ログイン状態のチェック
@@ -51,22 +52,25 @@ read body
 echo "input the title of your PR"
 read pr_title
 gh pr create -r $reviewers -B $target_branch -b $body -t "${pr_title}"
-`
+```
 
 このスクリプトを実行すると、ghコマンドの機能として対象のリポジトリに直接操作あるいはforkして操作などの選択肢が出る場合があります。
 実際にPRを作成するときは、「続いて何をしますか？」という質問に"submit"(提出)を回答すると実際にPRが作成されます。
 
 このスクリプトですが後半部分をハードコーディングした形にすると対話の手間を減らすこともできます。
-` bash
+
+```bash
 # create Pull Request
 reviewers="hoge,fuga,hogehoge"
 target_branch="xxxxxxx"
 body="This PR aims ......"
 pr_title="fix bug"
 gh pr create -r $reviewers -B $target_branch -b $body -t "${pr_title}"
-`
+```
+
 パラメタを別ファイルから読み出すのもいいかもしれません。
 
 # 最後に
 地味な自動化ですが、チリも積もればなんとやら。みんなで何回も使うものを自動化する価値は高いです。
 他にもghコマンドを使ってマージやラベル付与も自動化できるのでエンジニアが開発とレビューに専念出来る環境作りに有用です
+この記事は[こちらの記事](https://qiita.com/ryokat3/items/d054b95f68810f70b136)を参考に作成しました。自動化ツール、すばらしい。
