@@ -1,5 +1,5 @@
 <!--
-title:   Pull Requestの作成を自動化したい
+title:   プルリクエストの作成を自動化したい
 tags:    GH,GitHub,pullrequest,shell,自動化
 id:      9846601839a0f48f027c
 private: false
